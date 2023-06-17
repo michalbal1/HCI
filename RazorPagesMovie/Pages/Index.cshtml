@@ -1,0 +1,43 @@
+﻿@page
+@model UsersModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@foreach (var User in Model.User)
+{
+    <h1>@User.Username  </h1>
+    <h2> @User.Password</h2>
+}
+@{
+    var Id = HttpContext.Session.GetString("Id");
+}
+<h1>Twój identyfikator: @Id</h1>
+<div class="main-content">
+    <h1>Sklep internetowy</h1>
+
+    <div class="categories">
+        <h2>Kategorie:</h2>
+        <ul>
+            <li>Kategoria 1</li>
+            <li>Kategoria 2</li>
+            <li>Kategoria 3</li>
+        </ul>
+    </div>
+
+    <div class="products">
+        <h2>Produkty:</h2>
+        <div class="product">
+            <h3>Nazwa Produktu</h3>
+            <p>Opis produktu</p>
+            <p>Cena: 19.99 zł</p>
+        </div>
+
+        <!-- Tu dodaj dynamicznie generowane produkty -->
+
+        <div class="product-placeholder">
+            <p>Więcej produktów wkrótce...</p>
+        </div>
+    </div>
+</div>

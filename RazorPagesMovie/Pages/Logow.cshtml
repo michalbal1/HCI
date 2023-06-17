@@ -1,0 +1,22 @@
+﻿@page
+@model RazorPagesMovie.Pages.LogowModel
+@{
+}
+<form method="post">
+    <div class="mb-3">
+        <label for="Login" class="form-label">Nazwa użytkownika lub Email</label>
+        <input asp-for="Login" type="text" class="form-control" id="Login" aria-describedby="NameHelp" name="Login">
+        <span asp-validation-for="Login" class="text-danger"></span>
+
+    </div>
+
+    <div class="mb-3">
+        <label for="Password1" class="form-label">Hasło</label>
+        <input asp-for="Pass1" type="password" class="form-control" id="Password1" aria-describedby="PasswordHelp" name="Pass1">
+        <span asp-validation-for="Pass1" class="text-danger"></span>
+
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-lg w-50" asp-page-handler="OnPost">Zaloguj</button>
+    </div>
+</form>

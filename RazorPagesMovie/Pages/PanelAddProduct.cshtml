@@ -1,0 +1,52 @@
+﻿@page
+@model RazorPagesMovie.Pages.PanelAddProductModel
+@{
+}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <form method="post">
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Nazwa</label>
+                    <input asp-for="Name" type="text" class="form-control" id="Name" aria-describedby="NameHelp" name="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Opis</label>
+                    <textarea asp-for="Description" type="" class="form-control" id="Description"  placeholder="opis" name="Description"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                   
+                </div>
+                <div class="mb-3">
+                    <label for="QuantityInStock" class="form-label">Ilość w tonach</label>
+                    <input asp-for="QuantityInStock" type="number" class="form-control" id="QuantityInStock" aria-describedby="PasswordHelp" name="QuantityInStock">
+                    <span asp-validation-for="QuantityInStock" class="text-danger"></span>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="Price" class="form-label">Cena</label>
+                    <input asp-for="Price" type="number" class="form-control" id="Price" aria-describedby="PasswordHelp" name="Price">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                    
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        Kategoria
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                        @foreach (var item in Model.Categories)
+                        {
+                            <li><button class="dropdown-item" type="submit" name="Category" value="@item.Name">@item.Name</button></li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg w-50" asp-page-handler="OnPost">Zarejestruj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

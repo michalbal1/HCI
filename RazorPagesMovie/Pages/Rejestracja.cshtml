@@ -1,0 +1,50 @@
+﻿@page
+@model RazorPagesMovie.Pages.RejestracjaModel
+@{
+}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+<form method="post">
+    <div class="mb-3">
+        <label for="Username" class="form-label">Nazwa użytkownika</label>
+        <input asp-for="Username" type="text" class="form-control" id="Username" aria-describedby="NameHelp" name="Username">
+                    <span asp-validation-for="Username" class="text-danger"></span>
+        <div id="NameHelp" class="form-text">Pole wymagane</div>
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="xyz@gmail.com" name="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+        <div id="emailHelp" class="form-text">Pole wymagane</div>
+    </div>
+    <div class="mb-3">
+        <label for="Password1" class="form-label">Hasło</label>
+                    <input asp-for="Pass1" type="password" class="form-control" id="Password1" aria-describedby="PasswordHelp" name="Pass1">
+                    <span asp-validation-for="Pass1" class="text-danger"></span>
+        <div id="PasswordHelp" class="form-text">Pole wymagane</div>
+    </div>
+    <div class="mb-3">
+        <label for="Password2" class="form-label">Powtórz Hasło</label>
+                    <input asp-for="Pass2" type="password" class="form-control" id="Password2" aria-describedby="PasswordHelp" name="Pass2">
+                    <span asp-validation-for="Pass2" class="text-danger"></span>
+        <div id="PasswordHelp" class="form-text">Pole wymagane</div>
+    </div>
+    <div class="mb-3">
+        <label for="Phone" class="form-label">Telefon</label>
+                    <input asp-for="Tel" type="tel" class="form-control" id="Phone" aria-describedby="PhoneHelp" name="Tel">
+        <div id="PhoneHelp" class="form-text">Pole opcjonalne</div>
+    </div>
+    <div class="mb-3">
+        <label for="Adres" class="form-label">Adres zamieszkania</label>
+                    <input asp-for="Adres" type="text" class="form-control" id="Adres" aria-describedby="AdresHelp" name="Adres">
+        <div id="AdresHelp" class="form-text">Pole opcjonalne</div>
+    </div>
+    <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg w-50" asp-page-handler="OnPost">Zarejestruj</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
