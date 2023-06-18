@@ -3,22 +3,83 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RazorPagesMovie</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RazorPagesMovie.styles.css" asp-append-version="true" />
 </head>
 <body>
+    @{
+        
+    IgnoreSection("Header");
+    IgnoreSection("Footer");
+
+    }
+    @{
+        var httpContext = Context.Request.HttpContext;
+        var Id = httpContext.Session.GetString("Id");
+        var Username = httpContext.Session.GetString("Username");
+    
+    
+    
+        if (Id != null)
+        {
+          
+            <header class="p-3 bg-dark text-white">
+                @RenderSection("Header", required: false)
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <div>
+                            <img src="~/Images/facebook-icon.png" width="32" height="32">
+                        </div>
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a asp-page="/Index" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Strona główna</font></font></a></li>
+                            <li><a asp-page="/Sklep" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sklep</font></font></a></li>
+
+
+                        </ul>
+
+                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                            <input type="search" class="form-control form-control-dark" placeholder="Szukaj..." aria-label="Szukaj">
+                        </form>
+
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="~/Images/facebook-icon.png" width="32" height="32" class="rounded-circle me-2">
+                                <strong>@Username</strong>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                                <li><a class="dropdown-item">Zamówienia</a></li>
+                                <li><a class="dropdown-item">Ustawienia </a></li>
+                                <li><a class="dropdown-item">Profil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                @{
+                                    var currentUrl = Context.Request.Path + Context.Request.QueryString;
+                                }
+                                <li><a class="dropdown-item" href="/Logout?Url=@currentUrl">Wyloguj</a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </header>
+            
+        }else{
+    
 
     <header class="p-3 bg-dark text-white">
+                @RenderSection("Header", required: false)
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                
 
+                        <div>
+                            <img src="~/Images/facebook-icon.png" width="32" height="32">
+            </div>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Strona główna</font></font></a></li>
-                    <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sklep</font></font></a></li>
-                    <li><a href="#" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kontakt</font></font></a></li>
+                    <li><a asp-page="/Index" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Strona główna</font></font></a></li>
+                    <li><a asp-page="/Sklep" class="nav-link px-2 text-white"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sklep</font></font></a></li>
+                    
                    
                 </ul>
 
@@ -33,14 +94,8 @@
             </div>
         </div>
     </header>
-
-  
-
-   
-
-
-
-
+    }
+    }
 
 
     <div class="container">
@@ -49,7 +104,14 @@
         </main>
     </div>
 
+
+
+
+
+   
+
     <footer class="py-3 border-top bg-dark text-white">
+        @RenderSection("Footer", required: false)
         <div class="container"> 
         <div class="row justify-content-between text-center">
         <div class="col">
@@ -94,6 +156,7 @@
         </div>
             </div> 
     </footer>
+  
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

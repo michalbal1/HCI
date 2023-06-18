@@ -79,3 +79,4 @@ C:\Users\user\source\repos\RazorPagesMovie\RazorPagesMovie\bin\Debug\net7.0\Micr
 C:\Users\user\source\repos\RazorPagesMovie\RazorPagesMovie\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\user\source\repos\RazorPagesMovie\RazorPagesMovie\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\user\source\repos\RazorPagesMovie\RazorPagesMovie\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\user\source\repos\RazorPagesMovie\RazorPagesMovie\obj\Debug\net7.0\scopedcss\Pages\Shared\Sidebars.cshtml.rz.scp.css

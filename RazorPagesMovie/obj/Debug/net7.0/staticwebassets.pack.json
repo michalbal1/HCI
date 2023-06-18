@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\RazorPagesMovie.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\Sklad_Weglowy.svg",
+      "PackagePath": "staticwebassets\\Images\\Sklad_Weglowy.svg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\facebook-icon.png",
+      "PackagePath": "staticwebassets\\Images\\facebook-icon.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

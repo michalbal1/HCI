@@ -49,6 +49,7 @@ namespace RazorPagesMovie.Pages
                 if (user != null &&  Pass1 != null && VerifyPassword(user?.Password, Pass1))
                 {
                     HttpContext.Session.SetString("Id", user.Id.ToString());
+                    HttpContext.Session.SetString("Username", user.Username.ToString());
                 }
                 else
                 {
