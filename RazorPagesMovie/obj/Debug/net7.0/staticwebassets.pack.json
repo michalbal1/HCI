@@ -9,8 +9,20 @@
       "PackagePath": "staticwebassets\\Images\\Sklad_Weglowy.svg"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\brunatny.png",
+      "PackagePath": "staticwebassets\\Images\\brunatny.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\drzewny.png",
+      "PackagePath": "staticwebassets\\Images\\drzewny.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\facebook-icon.png",
       "PackagePath": "staticwebassets\\Images\\facebook-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\kamieny.png",
+      "PackagePath": "staticwebassets\\Images\\kamieny.png"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\css\\site.css",

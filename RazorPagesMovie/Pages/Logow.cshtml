@@ -2,21 +2,30 @@
 @model RazorPagesMovie.Pages.LogowModel
 @{
 }
-<form method="post">
-    <div class="mb-3">
-        <label for="Login" class="form-label">Nazwa użytkownika lub Email</label>
-        <input asp-for="Login" type="text" class="form-control" id="Login" aria-describedby="NameHelp" name="Login">
-        <span asp-validation-for="Login" class="text-danger"></span>
 
-    </div>
+<div class="d-flex justify-content-center align-items-center vh-100" vh-80>
+    <form method="post" style="width: 33%;">
+        <h1 class="h3 mb-3 fw-normal">Logowanie</h1>
+        <div class="mb-3">
+            <label for="Login" class="form-label">Nazwa użytkownika lub Email</label>
+            <input asp-for="Login" type="text" class="form-control" id="Login" aria-describedby="NameHelp" name="Login">
+            <span asp-validation-for="Login" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label for="Password1" class="form-label">Hasło</label>
-        <input asp-for="Pass1" type="password" class="form-control" id="Password1" aria-describedby="PasswordHelp" name="Pass1">
-        <span asp-validation-for="Pass1" class="text-danger"></span>
+        <div class="mb-3">
+            <label for="Password1" class="form-label">Hasło</label>
+            <input asp-for="Pass1" type="password" class="form-control" id="Password1" aria-describedby="PasswordHelp" name="Pass1">
+            <span asp-validation-for="Pass1" class="text-danger"></span>
+        </div>
 
-    </div>
-    <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-lg w-50" asp-page-handler="OnPost">Zaloguj</button>
-    </div>
-</form>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Zapamiętaj mnie
+            </label>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-lg w-50" asp-page-handler="OnPost">Zaloguj</button>
+        </div>
+    </form>
+</div>

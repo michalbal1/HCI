@@ -23,9 +23,10 @@ namespace RazorPagesMovie.Pages
         public decimal Price { get; set; }
         [BindProperty]
         [Required(ErrorMessage ="Wybierz kategorie")]
-        public string Category { get; set; }
+        public string SelectedCategory { get; set; }
         private readonly RazorPagesMovieContext _dbContext;
         public List<Category> Categories { get; set; }
+        
 
         public PanelAddProductModel(RazorPagesMovieContext dbContext)
         {
@@ -37,13 +38,24 @@ namespace RazorPagesMovie.Pages
             return Page();
         }
         public async Task<IActionResult> OnPostAsync() {
+            Categories = _dbContext.Categories.ToList();
+            string image = string.Empty;
             if (!ModelState.IsValid)
             {
 
                 return Page();
             }
 
-
+            if(SelectedCategory=="wêgiel brunatny") {
+                image = "~/Images/brunatny.png";
+            }else if (SelectedCategory=="wêgiel kamienny")
+            {
+                image = "~/Images/kamieny.png";
+            }
+            else
+            {
+                image = "~/Images/drzewny.png";
+            }
 
             var product = new Product
             {
@@ -51,7 +63,7 @@ namespace RazorPagesMovie.Pages
                 Description=Description,
                 QuantityInStock=QuantityInStock,
                 Price=Price,
-                ImageUrl="/"
+                ImageUrl=image
 
 
             };
@@ -59,10 +71,10 @@ namespace RazorPagesMovie.Pages
             int count=await _dbContext.SaveChangesAsync();
             int productId = product.Id;
 
-            if (await _dbContext.Categories.AnyAsync(c => c.Name == Category))
+            if (await _dbContext.Categories.AnyAsync(c => c.Name == SelectedCategory))
             {
                
-                var category = await _dbContext.Categories.FirstOrDefaultAsync(c => c.Name == Category);
+                var category = await _dbContext.Categories.FirstOrDefaultAsync(c => c.Name == SelectedCategory);
                 if (category != null)
                 {
 

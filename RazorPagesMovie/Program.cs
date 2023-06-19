@@ -17,6 +17,19 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("Polaczenie1")));
 
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = "YourDefaultScheme";
+    
+})
+.AddCookie("YourDefaultScheme", options =>
+{
+    options.LoginPath = "/Logow";
+})
+.AddCookie("AdminScheme", options =>
+{
+    options.LoginPath = "/Panel"; 
+});
 
 // Build the application.
 var app = builder.Build();
@@ -36,6 +49,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
+
 
 app.UseAuthorization();
 

@@ -53,7 +53,8 @@ namespace RazorPagesMovie.Pages
                 }
                 else
                 {
-                    // Nieprawid³owe has³o, obs³u¿ odpowiednio
+                    ModelState.AddModelError("Pass1", "Nieprawid³owe has³o");
+                    return Page();
                 }
             }
 

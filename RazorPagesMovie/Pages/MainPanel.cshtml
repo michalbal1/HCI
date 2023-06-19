@@ -1,7 +1,16 @@
 ﻿@page
 @model RazorPagesMovie.Pages.MainPanelModel
 @{
-    Layout = "Sidebars";
+    var Role = PageContext.HttpContext.Session.GetString("Role");
+    if (Role == "Admin")
+    {
+        Layout = "Sidebars";
+    }
+    else
+    {
+        Layout = null;
+        <h1> Eror: Brak uprawnień </h1>
+    }
 }
 
 

@@ -47,18 +47,24 @@ namespace RazorPagesMovie.Pages
             if (Login=="Admin")
             {
                 var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Username == "Admin");
-                if (user != null && Pass1 != null && VerifyPassword(user?.Password, Pass1))
+                if (user.Role=="Admin" && user != null && Pass1 != null && VerifyPassword(user?.Password, Pass1))
                 {
-                    HttpContext.Session.SetString("Id", user.Id.ToString());
+                    HttpContext.Session.SetString("Role", user.Role.ToString());
                     return RedirectToPage("/MainPanel");
                 }
                 else
                 {
+                    ModelState.AddModelError("Pass1", "z³e has³o");
                     return Page();
                 }
             }
+            else
+            {
+                ModelState.AddModelError("Login", "Brak uprawnieñ");
+                return Page();
+            }
 
-            return RedirectToPage("/Index");
+            
         }
     }
 }
