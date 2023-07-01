@@ -8,11 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Shop.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Shop.cshtml" />
     <None Include="wwwroot\Images\facebook-icon.png" />
     <None Include="wwwroot\Images\Sklad_Weglowy.svg" />
   </ItemGroup>
@@ -25,14 +20,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Shop.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Shop.cshtml" />
+    <Folder Include="Nowy folder\" />
   </ItemGroup>
 
 </Project>

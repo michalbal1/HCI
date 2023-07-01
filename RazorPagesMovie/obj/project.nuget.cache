@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bxSR3NmNHswX1PFV6z23/5fNxcWbXM5bxc3a4k+0QJxX/Fn1Zy2x0EB5Ti4hX+yFbw1CzmqTG9GN+oNKcoKx6g==",
+  "dgSpecHash": "JS2h8SikwZ1QugvBGwFk0ftYBd7PeL2VVQBJFeHpkCTEgu3pXEj20djDvR0bEAVjswdhivRrHrfiKzpmzANnQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

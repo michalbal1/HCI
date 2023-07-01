@@ -27,6 +27,7 @@ namespace RazorPagesMovie.Pages
         }
         public void OnGet()
         {
+            
         }
          public bool VerifyPassword(string Password, string Pass1)
        {
@@ -58,7 +59,7 @@ namespace RazorPagesMovie.Pages
                 }
             }
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Shop");
         }
     }
 }

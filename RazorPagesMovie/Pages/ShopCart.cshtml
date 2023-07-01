@@ -1,0 +1,124 @@
+﻿@page
+@model RazorPagesMovie.Pages.ShopCartModel
+@{
+}
+<h2>Koszyk</h2>
+<div class="row">
+    <div class="col-8">
+    @if (Model.CartItems != null && Model.CartItems.Count > 0)
+    {
+            
+         
+            var i = 0;
+            <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nazwa produktu</th>
+                <th scope="col">Ilość</th>
+                <th scope="col">Cena</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                        i++;
+                        <tr>
+                    <th scope="row">@i</th>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price</td>
+                   
+                </tr>
+            }
+        </tbody>
+    </table>
+   
+    
+    }
+        else
+        {
+            <p>Koszyk jest pusty.</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        }
+    </div>
+    <div class="col-4">
+            <div class="container py-4" style="background-color: #f8f9fa;">
+                <div class="row">
+                    <div class="col">
+                        <h5>Pełna kwota koszyka: </h5>
+                        <p id="total-cost">
+                            @if (Model.CartItems != null && Model.CartItems.Count > 0)
+                            {
+                                decimal sum = 0;
+                                foreach (var item in Model.CartItems)
+                                {
+                                    sum += (item.Price * item.Quantity);
+                                }
+                                @sum
+                            }
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>Wysyłka: </h5>
+                        <div class="form-check">
+                            <input type="radio" id="free-shipping" name="shipping" value="0" onclick="calculateTotal()">
+                            <label for="free-shipping">Darmowa dostawa do 80km</label><br>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="normal-shipping" name="shipping" value="400" onclick="calculateTotal()">
+                            <label for="normal-shipping">Dostawa do 200km za 400zł</label><br>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="expensive-shipping" name="shipping" value="800" onclick="calculateTotal()">
+                            <label for="expensive-shipping">Dostawa powyżej 200km za 800zł</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>Do zapłaty z dostawą: </h5>
+                        <p id="total-sum">
+                            @if (Model.CartItems != null && Model.CartItems.Count > 0)
+                            {
+                                decimal sum = 0;
+                                foreach (var item in Model.CartItems)
+                                {
+                                    sum += (item.Price * item.Quantity);
+                                }
+                                @sum
+                            }
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a asp-page="/Cash_register" class="btn btn-primary">Przejdź do kasy</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function calculateTotal() {
+                    var totalCostElement = document.getElementById('total-cost');
+                    var totalSumElement = document.getElementById('total-sum');
+
+                    var totalCost = parseFloat(totalCostElement.innerText);
+                    var shippingCost = parseFloat(document.querySelector('input[name="shipping"]:checked').value);
+
+                    totalSumElement.innerText = totalCost + shippingCost;
+                }
+            </script>
+    </div>
+
+
+</div>
+

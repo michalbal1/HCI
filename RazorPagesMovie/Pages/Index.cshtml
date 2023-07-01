@@ -3,41 +3,101 @@
 @{
    
 }
-
-
-@foreach (var User in Model.User)
-{
-    <h1>@User.Username  </h1>
-    <h2> @User.Password</h2>
+<style>
+.card {
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+    border-radius: 20px;
+    margin: 20px;
 }
-@{
-    var Id = HttpContext.Session.GetString("Id");
+
+.card:hover {
+            background-color: #B3B3B3; 
 }
-<h1>Twój identyfikator: @Id</h1>
-<div class="main-content">
-    <h1>Sklep internetowy</h1>
 
-    <div class="categories">
-        <h2>Kategorie:</h2>
-        <ul>
-            <li>Kategoria 1</li>
-            <li>Kategoria 2</li>
-            <li>Kategoria 3</li>
-        </ul>
+.card .btn {
+    margin-top: 1rem; 
+}
+</style>
+  
+    <div class="text-center py-5">
+        <h1>Szukasz węgla opałowego? Dobrze trafiłeś</h1>
     </div>
-
-    <div class="products">
-        <h2>Produkty:</h2>
-        <div class="product">
-            <h3>Nazwa Produktu</h3>
-            <p>Opis produktu</p>
-            <p>Cena: 19.99 zł</p>
-        </div>
-
-        <!-- Tu dodaj dynamicznie generowane produkty -->
-
-        <div class="product-placeholder">
-            <p>Więcej produktów wkrótce...</p>
-        </div>
-    </div>
+<div class="text-left py-5">
+    <h1>Dlaczego nasz skład?</h1>
 </div>
+
+   
+    <div class="row">
+        <div class="col-md-6">
+            
+            <img src="~/Images/kopa.png" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <br />
+            <br />
+            <br />
+            <br />
+        <h4>Indywidualne podejście</h4>
+        <p>Nasz skład węglowy to owoc naszej pasji i ciężkiej pracy, poświęconej doskonaleniu każdego szczegółu. Tworzymy go z myślą o Tobie, naszym drogim kliencie. Dzięki indywidualnemu podejściu możemy dostosować produkty do Twoich unikalnych preferencji.</p>
+        <h4>Jakość na pierwszym miejscu</h4>
+        <p>Wierzymy, że jakość jest kluczowa. Dlatego starannie dobieramy produkty, korzystając tylko z najwyższej jakości surowców. Nasze produkty są starannie wyselekcjonowane, a proces produkcji poddawany rygorystycznym kontrolom jakości, zapewniając Ci produkt, na którym możesz polegać.</p>
+       
+       
+    </div>
+    </div>
+
+<div class="text-center py-5">
+    <h1>Co oferujemy?</h1>
+</div>
+
+   
+    <div class="d-flex justify-content-around py-5">
+    <div class="card rounded shadow hover">
+        <img src="~/Images/brunatny_min.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Węgiel brunatny</h5>
+            <p class="card-text">Przejdz do sklepu i zobacz ofertę.</p>
+            <a href="/store" class="btn btn-primary">Przejdź do sklepu</a>
+        </div>
+    </div>
+    <div class="card rounded shadow hover">
+        <img src="~/Images/kamienny_min.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Węgiel kamienny</h5>
+            <p class="card-text"> Przejdz do sklepu i zobacz ofertę.</p>
+            <a href="/store" class="btn btn-primary">Przejdź do sklepu</a>
+        </div>
+    </div>
+    <div class="card rounded shadow hover">
+        <img src="~/Images/drzewny_min.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Węgiel drzewny</h5>
+            <p class="card-text">Przejdz do sklepu i zobacz ofertę.</p>
+            
+            <a href="/store" class="btn btn-primary center">Przejdź do sklepu</a>
+        </div>
+    </div>
+    </div>
+
+    
+    <div class="row">
+        
+        <div class="col-md-6">
+            <br />
+            <br />
+            <br />
+            <br />
+            <h4>Darmowy Transport</h4>
+        <p>Oferujemy darmowy transport naszych produktów do Twojego miejsca zamieszkania w odległości do 100km! Jako nasz klient, możesz cieszyć się wygodą dostawy bez dodatkowych kosztów. Dostarczamy nasze produkty bezpośrednio pod Twój adres, zapewniając Ci wygodę i oszczędność czasu. Zamów już dziś nasz skład węglowy i skorzystaj z darmowego transportu!</p>
+        </div>
+    <div class="col-md-6">
+
+        <img src="~/Images/tarnsport.png" class="img-fluid">
+    </div>
+    </div>
+
+
+
+
+

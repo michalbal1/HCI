@@ -11,6 +11,8 @@ namespace RazorPagesMovie.Pages
 {
     public class UsersModel : PageModel
     {
+        public ShopCartModel shopcart { get; set; }
+        public StoreModel StoreModel { get; set; }
         private readonly RazorPagesMovieContext _dbContext;
 
         public List<User> User { get; set; }
@@ -22,11 +24,13 @@ namespace RazorPagesMovie.Pages
 
         public async Task<IActionResult> OnGet()
         {
+            shopcart = new ShopCartModel();
+           
             var Id = HttpContext.Session.GetString("Id");
           
 
 
-            User = await _dbContext.Users.ToListAsync();
+            
 
             return Page();
         }

@@ -26,6 +26,19 @@ namespace RazorPagesMovie.Pages
 
             return Page();
         }
-       
+        public async Task<IActionResult> OnPostDeleteAsync(int productId)
+        {
+            var product = await _dbContext.Products.FindAsync(productId);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.Products.Remove(product);
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToPage();
+        }
+
     }
 }

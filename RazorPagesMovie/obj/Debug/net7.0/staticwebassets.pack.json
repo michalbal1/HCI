@@ -13,16 +13,44 @@
       "PackagePath": "staticwebassets\\Images\\brunatny.png"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\brunatny_min.png",
+      "PackagePath": "staticwebassets\\Images\\brunatny_min.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\drzewny.png",
       "PackagePath": "staticwebassets\\Images\\drzewny.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\drzewny_min.png",
+      "PackagePath": "staticwebassets\\Images\\drzewny_min.png"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\facebook-icon.png",
       "PackagePath": "staticwebassets\\Images\\facebook-icon.png"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\kamienny_min.png",
+      "PackagePath": "staticwebassets\\Images\\kamienny_min.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\kamieny.png",
       "PackagePath": "staticwebassets\\Images\\kamieny.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\kopa.png",
+      "PackagePath": "staticwebassets\\Images\\kopa.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\koszyk.png",
+      "PackagePath": "staticwebassets\\Images\\koszyk.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\logo.png",
+      "PackagePath": "staticwebassets\\Images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\tarnsport.png",
+      "PackagePath": "staticwebassets\\Images\\tarnsport.png"
     },
     {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\css\\site.css",
