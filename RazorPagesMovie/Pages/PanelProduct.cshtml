@@ -13,7 +13,7 @@
                     foreach (var product in Model.Products)
                     {
                         <div class="col-md-4 mb-4">
-                            <div class="card mb-3">
+                            <div class="card mb-3 h-100 d-flex flex-column">
                                 <div class="row g-0">
                                     <div class="col-md-4">
                                         <img src="@Url.Content(product.ImageUrl)" class="card-img-top">
@@ -27,10 +27,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer justify-content-between d-flex">
+                                <div class="card-footer justify-content-between d-flex mt-auto">
                                     <div class="d-flex">
                                         <form method="post" asp-page-handler="Delete" asp-route-productId="@product.Id" class="me-2">
-                                            <button type="submit" class="btn btn-danger" >Usuń</button>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Czy na pewno chcesz usunąć ten produkt?');">Usuń</button>
                                         </form>
                                         <a asp-page="/PanelProductEdit" asp-route-productId="@product.Id" type="button" class="btn btn-primary">Edytuj</a>
                                     </div> 
