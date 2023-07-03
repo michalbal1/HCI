@@ -17,7 +17,7 @@ namespace RazorPagesMovie.Models
         [Required]
         public decimal Price { get; set; }
 
-        [Required]
+       
         public string? ImageUrl { get; set; }
 
       

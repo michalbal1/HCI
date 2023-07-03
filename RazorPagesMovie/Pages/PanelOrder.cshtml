@@ -1,0 +1,73 @@
+﻿@page
+@model RazorPagesMovie.Pages.PanelOrderModel
+@{
+    var Role = PageContext.HttpContext.Session.GetString("Role");
+    if (Role == "Admin")
+    {
+        Layout = "Sidebars";
+        @foreach (var order in Model.Orders)
+        {
+            if (order.Status != "Dostarczone")
+            {
+                decimal sum = 0;
+                <div class="card ml-5 w-100 mt-5">
+                    <div class="row">
+                        <div class="d-flex justify-content-between">
+                            <div class="text-left card-header ">
+                                <h5 >Zamówienie nr @order.Id</h5>
+                            </div>
+                            <div class="text-right card-header">
+                                <h5 >z dnia: @order.OrderDate</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" asp-page-handler="UpdateStatus" asp-route-id="@order.Id">
+                            <div class="form-group">
+                                <label for="statusSelect"><b>Status:</b></label>
+                                <select class="form-control w-auto" id="statusSelect" name="NewStatus">
+                                    <option selected>@order.Status</option>
+                                    <option>W realizacji</option>
+                                    <option>Wysyłka</option>
+                                    <option>Dostarczone</option>
+                                </select>
+                            </div><br />
+                            <button type="submit" class="btn btn-primary btn-sm">Aktualizuj</button>
+                        </form>
+
+
+                    </div>
+
+                    <b>Szczegóły:  </b><br />
+
+                    @foreach (var detail in order.OrderDetails)
+                    {
+                        <p class="card-text">
+
+                            <b> Nazwa:</b> @detail.Product.Name <b>Ilość: </b> @detail.Quantity
+
+                        </p>
+                        sum += (detail.Quantity * detail.Price);
+
+                    }
+
+                    <p><b>Adres dostawy: </b> @order.GuestShippingAddress</p>
+            <p><b>Cena transportu: </b> @order.ShippingPrice</p>
+                <p><b>Do zapłaty: </b>@(sum + order.ShippingPrice) zł </p>
+                <div class="d-flex justify-content-center">
+                    <form method="post" asp-page-handler="Delete" asp-route-orderId="@order.Id" class="me-2">
+                        <button type="submit" class="btn btn-danger">Anuluj zamówienie</button>
+                    </form>
+            </div>
+                
+           </div>
+           }
+        }
+    }
+    else
+    {
+        Layout = null;
+        <h1> Eror: Brak uprawnień </h1>
+    }
+}
+
