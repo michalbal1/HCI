@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\Images\\tarnsport.png"
     },
     {
+      "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\Images\\user_icon.png",
+      "PackagePath": "staticwebassets\\Images\\user_icon.png"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\repos\\RazorPagesMovie\\RazorPagesMovie\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

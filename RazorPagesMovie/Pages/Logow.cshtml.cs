@@ -49,7 +49,7 @@ namespace RazorPagesMovie.Pages
                 var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == Login || u.Username == Login);
                 if (user != null &&  Pass1 != null && VerifyPassword(user?.Password, Pass1))
                 {
-                    HttpContext.Session.SetString("Id", user.Id.ToString());
+                    HttpContext.Session.SetInt32("Id", user.Id);
                     HttpContext.Session.SetString("Username", user.Username.ToString());
                 }
                 else
@@ -59,7 +59,7 @@ namespace RazorPagesMovie.Pages
                 }
             }
 
-            return RedirectToPage("/Shop");
+            return RedirectToPage("/Store");
         }
     }
 }

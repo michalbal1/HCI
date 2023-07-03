@@ -19,6 +19,7 @@ namespace RazorPagesMovie.Models
 
         public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
 
+        public int ? ShippingPrice { get; set; }
        
         public string? GuestEmail { get; set; }
         public string? GuestShippingAddress { get; set; }

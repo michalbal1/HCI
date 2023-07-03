@@ -1,5 +1,115 @@
 ﻿@page
 @model RazorPagesMovie.Pages.Cash_registerModel
 @{
+   
+    
+   
 }
-<h5>Cehckout</h5>
+
+<h4></h4>
+<div class="row mt-5">
+   
+<div class="container col-8">
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+                <h4 class="center-left">Dane</h4>
+                <form method="post">
+                <div class="mb-3">
+                    <label for="FirstName" class="form-label">Imię </label>
+                    <input asp-for="FirstName" type="text" class="form-control w-100" id="FirstName" aria-describedby="NameHelp" name="FirstName">
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    <div id="NameHelp" class="form-text">Pole wymagane</div>
+                </div>
+                <div class="mb-3">
+                    <label for="LastName" class="form-label">Nazwisko </label>
+                    <input asp-for="LastName" type="text" class="form-control" id="LastName" aria-describedby="NameHelp" name="LastName">
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    <div id="NameHelp" class="form-text">Pole wymagane</div>
+                </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="xyz@gmail.com" name="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <div id="emailHelp" class="form-text">Pole wymagane</div>
+                </div>
+               
+                <div class="mb-3">
+                    <label for="Phone" class="form-label">Telefon</label>
+                    <input asp-for="Tel" type="tel" class="form-control" id="Phone" aria-describedby="PhoneHelp" name="Tel">
+                        <span asp-validation-for="Tel" class="text-danger"></span>
+                        <div id="PhoneHelp" class="form-text">Pole wymagane</div>
+                </div>
+                <div class="mb-3">
+                    <label for="Adres" class="form-label">Adres Dostawy</label>
+                    <input asp-for="Adres" type="text" class="form-control" id="Adres" aria-describedby="AdresHelp" name="Adres">
+                        <span asp-validation-for="Adres" class="text-danger"></span>
+                        <div id="AdresHelp" class="form-text">Pole wymagane</div>
+                </div>
+                <div>
+                    <input asp-for="ShippingPrice" type="hidden" id="ShippingPrice" name="ShippingPrice" />
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg w-50" asp-page-handler="OnPost">Zamawiam</button>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</div>
+
+    <div class="col-4">
+        <div class="container py-4" style="background-color: #f8f9fa;">
+        <h4 class="center-left">Twoje zamówienie</h4>
+        
+            <div>
+                <h5> Produkty: </h5>
+  @{
+      if(Model.CartItems != null){
+                    foreach (var item in Model.CartItems)
+            {
+               
+                    <div>
+
+                                <b>Nazwa: </b>  @item.Name
+                                <b>Ilość: </b> @item.Quantity ton
+                   </div>
+
+                
+            }
+            <br/>
+                        <h5>Kwota: </h5>
+            <div id="totalsum">
+           
+
+            </div>
+           
+     }}
+
+       </div>
+
+  
+        <div class="form-check">
+            <br />
+            <h5>Płatność: </h5>
+            <input type="radio" id="typeshipping" name="shipping">
+            <label for="typeshipping">Zapłacę przy odbiorzę</label><br />
+        </div>
+    
+    
+    </div>
+    </div>
+</div>  
+<script>
+    var totalSum = sessionStorage.getItem('Sum');
+    var ShiipingPrice = sessionStorage.getItem('ShiipingPrice');
+
+
+    if (totalSum !== null) {
+        totalSum = parseFloat(totalSum);
+        var totalSumDisplay = document.getElementById('totalsum');
+        totalSumDisplay.innerText = totalSum.toFixed(2) +"zł";
+       ShiipingPrice = parseFloat(ShiipingPrice);
+        var ShippingPriceDisplay = document.getElementById('ShippingPrice');
+        ShippingPriceDisplay.value = ShiipingPrice;
+    }
+</script>
